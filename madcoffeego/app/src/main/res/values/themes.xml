@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MadCoffeeGo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#FF5712</item>
         <item name="colorPrimaryVariant">#FFD1BF</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

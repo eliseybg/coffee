@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:background="#ffffff"
+    tools:context=".view.onboarding.OnboardingFragment">
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/skip"
+        android:textColor="#FF5712"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/on_boarding_view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/on_boarding_marker_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skip" />
+
+    <LinearLayout
+        android:id="@+id/on_boarding_marker_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="39dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/on_boarding1"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/onboarding_on_circle" />
+
+        <View
+            android:id="@+id/on_boarding2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/onboarding_off_circle" />
+
+        <View
+            android:id="@+id/on_boarding3"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/onboarding_off_circle" />
+
+        <View
+            android:id="@+id/on_boarding4"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/onboarding_off_circle" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="59dp"
+        android:background="@drawable/onboarding_button_selector"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
