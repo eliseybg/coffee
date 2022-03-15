@@ -3,6 +3,7 @@ package com.breaktime.madcoffeego.api
 import com.breaktime.madcoffeego.api.body.AccessToken
 import com.breaktime.madcoffeego.api.body.PhoneKey
 import com.breaktime.madcoffeego.api.body.RegisterDeviceBody
+import com.breaktime.madcoffeego.api.body.SpecialDealsItem
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -22,4 +23,7 @@ interface CoffeeApi {
         @Header("phonekey") phonekey: String,
         @Header("uuid") uuid: String,
     ): Call<AccessToken>
+
+    @GET("action")
+    fun getSpecialDeals(): Call<List<SpecialDealsItem>>
 }

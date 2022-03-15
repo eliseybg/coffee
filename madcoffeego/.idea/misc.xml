@@ -10,15 +10,17 @@
         <entry key="app/src/main/res/drawable/login_button_selector.xml" value="0.17" />
         <entry key="app/src/main/res/drawable/login_edit_text_selector.xml" value="0.17" />
         <entry key="app/src/main/res/drawable/onboarding_button_selector.xml" value="0.17" />
+        <entry key="app/src/main/res/drawable/special_deal_item_background.xml" value="0.17" />
         <entry key="app/src/main/res/drawable/splash_screen_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/to_go_selector.xml" value="0.1645" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/fragment_authorization.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2579710144927536" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.16796408408929492" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.1421295166015625" />
         <entry key="app/src/main/res/layout/on_boarding_item.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/slides_layout.xml" value="0.221875" />
+        <entry key="app/src/main/res/layout/special_deal_item.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1645" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1645" />
       </map>

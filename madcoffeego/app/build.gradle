@@ -54,4 +54,7 @@ dependencies {
 
     def viewPagerVersion = "1.0.0"
     implementation "androidx.viewpager2:viewpager2:$viewPagerVersion"
+
+    def picassoVersion = "2.71828"
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
 }
