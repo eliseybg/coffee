@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import java.util.*
 
 const val PHONE_UUID_KEY = "unique phone uuid"
+const val PHONE_TOKEN_KEY = "unique token"
 
 class LocalStorage(context: Context) {
     private var sharedPreferences: SharedPreferences =
@@ -22,5 +23,15 @@ class LocalStorage(context: Context) {
                 myEdit.apply()
             }
             return id
+        }
+
+    var token: String?
+        get() {
+            return sharedPreferences.getString(PHONE_TOKEN_KEY, null)
+        }
+        set(value) {
+            val myEdit = sharedPreferences.edit()
+            myEdit.putString(PHONE_TOKEN_KEY, value)
+            myEdit.apply()
         }
 }

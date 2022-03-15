@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.breaktime.madcoffeego.R
+import com.breaktime.madcoffeego.data.LocalStorage
 import kotlinx.coroutines.*
 
 class SplashScreenFragment : Fragment() {
@@ -16,8 +17,16 @@ class SplashScreenFragment : Fragment() {
     ): View? {
         GlobalScope.launch {
             delay(2000)
+            val storage = LocalStorage(requireContext())
             withContext(Dispatchers.Main) {
-                findNavController().navigate(R.id.onboardingFragment)
+                if (storage.token == null) {
+                    findNavController().popBackStack()
+                    findNavController().navigate(R.id.onboardingFragment)
+                }
+                else {
+                    findNavController().popBackStack()
+                    findNavController().navigate(R.id.homeFragment)
+                }
             }
         }
         return inflater.inflate(R.layout.fragment_splash_screen, container, false)

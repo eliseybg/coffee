@@ -37,13 +37,33 @@ class OnboardingFragment : Fragment() {
         val skip = view.findViewById<TextView>(R.id.skip)
 
         skip.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
+            findNavController().popBackStack()
+            findNavController().navigate(R.id.authorizationFragment)
         }
 
         val next = view.findViewById<Button>(R.id.next)
 
         next.setOnClickListener {
-            onBoardingViewPager.setCurrentItem(onBoardingViewPager.currentItem + 1, true)
+            next.setOnClickListener {
+                when (onBoardingViewPager.currentItem) {
+                    2 -> {
+                        onBoardingViewPager.setCurrentItem(
+                            onBoardingViewPager.currentItem + 1,
+                            true
+                        )
+                    }
+                    3 -> {
+                        findNavController().popBackStack()
+                        findNavController().navigate(R.id.authorizationFragment)
+                    }
+                    else -> {
+                        onBoardingViewPager.setCurrentItem(
+                            onBoardingViewPager.currentItem + 1,
+                            true
+                        )
+                    }
+                }
+            }
         }
 
         onBoardingViewPager = view.findViewById(R.id.on_boarding_view_pager)
@@ -57,9 +77,9 @@ class OnboardingFragment : Fragment() {
                     val deltaX = toX - fromX
                     if (deltaX > 0 && abs(deltaX) > 150) {
                         println("true")
-                        return@setOnTouchListener  true
+                        return@setOnTouchListener true
                     } else {
-                       return@setOnTouchListener  false
+                        return@setOnTouchListener false
                     }
                 }
             }
