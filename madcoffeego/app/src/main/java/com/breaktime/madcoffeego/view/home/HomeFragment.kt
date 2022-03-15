@@ -10,6 +10,8 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.breaktime.madcoffeego.R
 import com.breaktime.madcoffeego.api.RetrofitInstance
 import com.breaktime.madcoffeego.api.body.SpecialDealsItem
@@ -49,6 +51,14 @@ class HomeFragment : Fragment() {
                     horizontalItems!!.addView(item)
                 }
             }
+        }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = RecyclerAdapter(this)
+        lifecycleScope.launch(Dispatchers.IO) {
+            val menu = RetrofitInstance.API.getMenu().await()
+            menu
         }
 
         return view

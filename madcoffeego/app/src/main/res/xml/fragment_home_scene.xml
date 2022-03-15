@@ -3,16 +3,31 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetEnd="@+id/start"
-        motion:constraintSetStart="@id/end"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
         motion:duration="1000">
         <OnSwipe
-            motion:dragDirection="dragUp"
+            motion:dragDirection="dragDown"
             motion:touchAnchorId="@+id/content_scroll_view"
             motion:touchAnchorSide="top" />
     </Transition>
 
-    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_editor_absoluteX="0dp"
+            motion:layout_constraintTop_toTopOf="@+id/horizontalScrollView"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            motion:layout_constraintVertical_bias="0.087"
+            android:id="@+id/drink_buttons" />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            android:id="@+id/drink_buttons"
+            android:layout_marginTop="0dp" />
+    </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint

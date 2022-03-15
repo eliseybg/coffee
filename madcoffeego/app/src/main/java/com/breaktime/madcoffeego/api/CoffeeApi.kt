@@ -1,14 +1,8 @@
 package com.breaktime.madcoffeego.api
 
-import com.breaktime.madcoffeego.api.body.AccessToken
-import com.breaktime.madcoffeego.api.body.PhoneKey
-import com.breaktime.madcoffeego.api.body.RegisterDeviceBody
-import com.breaktime.madcoffeego.api.body.SpecialDealsItem
+import com.breaktime.madcoffeego.api.body.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface CoffeeApi {
     @POST("mobile")
@@ -26,4 +20,7 @@ interface CoffeeApi {
 
     @GET("action")
     fun getSpecialDeals(): Call<List<SpecialDealsItem>>
+
+    @GET("menu")
+    fun getMenu(@Query("id") id: Int = 13): Call<List<MenuItem>>
 }
